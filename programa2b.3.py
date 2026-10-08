@@ -4,14 +4,16 @@ while True:
     numero_secreto = random.randint(1, 20)
     tentativas = 0
     acertou = False
+    sair = False
 
     print("\nTente adivinhar um número entre 1 e 20!")
 
-    for tentativa in range(1, 10):
+    while tentativas < 10 and not acertou:
         entrada = input("Digite seu palpite (ou 'pare' para sair): ")
 
         if entrada.lower() == "pare":
             print("Jogo encerrado!")
+            sair = True
             break
 
         try:
@@ -20,24 +22,18 @@ while True:
             print("Por favor, digite um número inteiro.")
             continue
 
-        #2123 
         tentativas += 1
-        restantes = 10 - tentativas
-        print("Tentativas restantes:", restantes)
-
+        print("Tentativas restantes:", 10 - tentativas)
 
         if chute < numero_secreto:
             print("Errou! Tente um número maior.")
-
         elif chute > numero_secreto:
             print("Errou! Tente um número menor.")
-
         else:
             print(f"Acertou em {tentativas} tentativa(s)!")
             acertou = True
-            break
 
-    if entrada.lower() == "pare":
+    if sair:
         break
 
     if not acertou:
