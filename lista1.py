@@ -15,3 +15,4 @@ cores.append('Preto')
 
 print(cores)
 print(cores[3])
+print(len(cores))
