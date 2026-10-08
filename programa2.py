@@ -37,3 +37,6 @@ while True:
     if jogar_novamente.lower() == "não" or jogar_novamente.lower() == "nao" or jogar_novamente.lower() == "n" or jogar_novamente.lower() == "N":
         print("Obrigado por jogar!")
         break
+
+
+    
